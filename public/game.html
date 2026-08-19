@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Black Jack Royale</title>
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+
+    <header class="game-header">
+      <div class="logo">
+        <span class="logo-suit">♠</span>
+
+        <div>
+          <h1>BLACK JACK</h1>
+          <p>Royal Table</p>
+        </div>
+
+        <span class="logo-suit red">♥</span>
+      </div>
+
+      <div class="player-wallet">
+        <span class="wallet-label"> Your balance </span>
+
+        <div class="wallet-value">
+          <span class="chip-icon">●</span>
+
+          <span id="chips"> 1000 </span>
+
+          <span class="wallet-unit"> CHIPS </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= MAIN GAME ================= -->
+
+    <main class="casino">
+      <section class="game-table">
+        <!-- DECORATION -->
+
+        <div class="table-decoration">
+          <span>♠</span>
+          <span class="red">♥</span>
+          <span class="red">♦</span>
+          <span>♣</span>
+        </div>
+
+        <!-- ================= DEALER ================= -->
+
+        <section class="dealer-zone">
+          <div class="zone-title">
+            <span class="zone-line"></span>
+
+            <div>
+              <p class="zone-subtitle">THE HOUSE</p>
+
+              <h2>DEALER</h2>
+            </div>
+
+            <span class="zone-line"></span>
+          </div>
+
+          <div id="dealer-cards" class="cards-container dealer-cards">
+            <!-- Les cartes du dealer seront ajoutées ici par JS -->
+
+            <div class="card-placeholder">?</div>
+
+            <div class="card card-back">
+              <span>♠</span>
+            </div>
+          </div>
+
+          <div id="dealer-total" class="hand-total hidden">
+            Total:
+            <span>0</span>
+          </div>
+        </section>
+
+        <!-- ================= CENTER ================= -->
+
+        <section class="table-center">
+          <div class="blackjack-logo">
+            <span class="twenty-one"> 21 </span>
+
+            <p>BLACK JACK</p>
+
+            <small> DEALER MUST STAND ON 17 </small>
+          </div>
+
+          <!-- RESULT -->
+
+          <div id="result" class="game-result" aria-live="polite"></div>
+        </section>
+
+        <!-- ================= PLAYER ================= -->
+
+        <section class="player-zone">
+          <div id="player-total" class="hand-total">
+            Total:
+            <span>0</span>
+          </div>
+
+          <div id="player-cards" class="cards-container player-cards">
+            <!-- Les cartes du joueur seront ajoutées ici par JS -->
+          </div>
+
+          <div class="zone-title">
+            <span class="zone-line"></span>
+
+            <div>
+              <p class="zone-subtitle">YOUR HAND</p>
+
+              <h2>PLAYER</h2>
+            </div>
+
+            <span class="zone-line"></span>
+          </div>
+        </section>
+
+        <!-- ================= BET ================= -->
+
+        <section id="bet-section" class="bet-section">
+          <div class="bet-title">
+            <span> PLACE YOUR BET </span>
+
+            <small> Choose your wager and enter the table </small>
+          </div>
+
+          <div class="bet-controls">
+            <button type="button" class="quick-bet" data-bet="25">25</button>
+
+            <button type="button" class="quick-bet" data-bet="50">50</button>
+
+            <button type="button" class="quick-bet" data-bet="100">100</button>
+
+            <button type="button" class="quick-bet" data-bet="250">250</button>
+          </div>
+
+          <div class="bet-input-wrapper">
+            <label for="bet"> Your bet </label>
+
+            <div class="bet-input">
+              <span class="chip-icon"> ● </span>
+
+              <input
+                type="number"
+                id="bet"
+                min="1"
+                placeholder="Enter amount"
+              />
+            </div>
+          </div>
+
+          <button
+            id="start-round"
+            class="main-button start-button"
+            type="button"
+          >
+            <span> DEAL CARDS </span>
+
+            <span> ♠ </span>
+          </button>
+        </section>
+
+        <!-- ================= GAME ACTIONS ================= -->
+
+        <section id="game-section" class="game-actions hidden">
+          <button id="hit" class="action-button hit-button" type="button">
+            <span class="action-icon"> + </span>
+
+            <span> HIT </span>
+
+            <small> Take another card </small>
+          </button>
+
+          <button id="stand" class="action-button stand-button" type="button">
+            <span class="action-icon"> ✋ </span>
+
+            <span> STAND </span>
+
+            <small> Hold your hand </small>
+          </button>
+        </section>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="game-footer">
+      <span> ♠ </span>
+
+      <p>Blackjack pays 1:1 · Dealer stands on 17</p>
+
+      <span class="red"> ♥ </span>
+    </footer>
+
+    <script src="./game.js"></script>
+  </body>
+</html>

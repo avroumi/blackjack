@@ -30,12 +30,12 @@ export const calculateHandValue = (cards) => {
   return total;
 };
 
-export const dealerLogic = () => {
-  let total = 0;
-  const cards = [];
+export const dealerLogic = (cards) => {
+  const cardsList = [...cards];
+  let total = calculateHandValue(cardsList);
   while (total < 17) {
-    cards.push(drawCard());
-    total = calculateHandValue(cards);
+    cardsList.push(drawCard());
+    total = calculateHandValue(cardsList);
   }
-  return { card: cards, total };
+  return { cards: cardsList, total };
 };
