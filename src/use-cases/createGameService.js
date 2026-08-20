@@ -21,7 +21,7 @@ export const createGameService = ({
       throw new AppError("Bet must bee postive", 400);
     }
     if (bet > player.chips) {
-      throw new AppError("You dnot have money, go home", 400);
+      throw new AppError("You don't have money, go home", 400);
     }
 
     const playersCards = [drawCard(), drawCard()];

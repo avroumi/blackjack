@@ -93,8 +93,6 @@
           </div>
 
           <!-- RESULT -->
-
-          <div id="result" class="game-result" aria-live="polite"></div>
         </section>
 
         <!-- ================= PLAYER ================= -->
@@ -103,6 +101,12 @@
           <div id="player-total" class="hand-total">
             Total:
             <span>0</span>
+          </div>
+
+          <div id="current-bet" class="current-bet">
+            BET:
+            <span>0</span>
+            CHIPS
           </div>
 
           <div id="player-cards" class="cards-container player-cards">
@@ -132,6 +136,9 @@
           </div>
 
           <div class="bet-controls">
+            <button type="button" id="clear-bet" class="chip-button">
+              CLEAR
+            </button>
             <button type="button" class="quick-bet" data-bet="25">25</button>
 
             <button type="button" class="quick-bet" data-bet="50">50</button>
@@ -139,6 +146,7 @@
             <button type="button" class="quick-bet" data-bet="100">100</button>
 
             <button type="button" class="quick-bet" data-bet="250">250</button>
+            <button type="button" id="max-bet" class="chip-button">MAX</button>
           </div>
 
           <div class="bet-input-wrapper">
@@ -199,6 +207,7 @@
       <span class="red"> ♥ </span>
     </footer>
 
+    <div id="result" class="game-result" aria-live="polite"></div>
     <script src="./game.js"></script>
   </body>
 </html>
